@@ -58,10 +58,10 @@
 執行結果
 --------
 	自動提醒水壺實拍	
-<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/1.jpg" alt="loop" width="70%">
+<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/1.jpg" alt="loop" width="50%">
 
 	提醒傳送到LINE群組
-<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/2.jpg" alt="loop" width="33%">
+<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/2.jpg" alt="loop" width="50%">
 
 	水位低於250ml以下會提醒用戶裝水，
 	並顯示目前水位，30秒提醒一次。

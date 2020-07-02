@@ -53,7 +53,7 @@
 ----------
 <img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/setup.PNG" alt="setup" width="80%">
 
-<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/loop.PNG" alt="loop" width="80%">
+<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/loop.PNG" alt="loop" width="%">
 
 
 執行結果

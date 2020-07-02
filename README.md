@@ -51,7 +51,7 @@
 
 程式截圖
 ----------
-<img src="https://github.com/martin1017/D1/blob/master/docs/Screenshot_1.png" alt="主页" width="33%">
+<img src="https://github.com/martin1017/D1-MINI-PROJECT/image/master/docs/Screenshot_1.png" alt="主页" width="33%">
 執行結果
 --------
 

@@ -51,8 +51,9 @@
 
 程式截圖
 ----------
-<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/setup.PNG" alt="setup" width="33%">
-<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/loop.PNG" alt="loop" width="33%">
+<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/setup.PNG" alt="setup" width="50%">
+<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/loop.PNG" alt="loop" width="50%">
+
 執行結果
 --------
 

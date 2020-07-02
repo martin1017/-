@@ -57,8 +57,9 @@
 
 執行結果
 --------
+	自動提醒水壺實拍	
 <img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/1.jpg" alt="loop" width="70%">
-	自動提醒水壺實拍
+	
 <img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/2.jpg" alt="loop" width="33%">
 
 專案心得

@@ -54,9 +54,11 @@
 <img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/setup.PNG" alt="setup" width="80%">
 <img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/loop.PNG" alt="loop" width="80%">
 
+
 執行結果
 --------
-
+<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/1.jpg" alt="loop" width="50%">
+<img src="https://github.com/martin1017/D1-MINI-PROJECT/blob/master/SCREENSHOT/2.jpg" alt="loop" width="50%">
 
 專案心得
 ----------

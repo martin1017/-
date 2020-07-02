@@ -1,0 +1,442 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_setup" id="Z4!88@-j#EQ+:Y=VI:F?" x="0" y="0">
+    <statement name="SETUP_FUNC">
+      <block type="serial_setup" id="Se8nndORmq=I,#90QF`P">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="SPEED">9600</field>
+        <next>
+          <block type="esp8266_sta_setup" id="{-1+(?6CM_FIqaRa}A?|">
+            <value name="SSID">
+              <block type="text" id="6wl-rdz~}#PG6YMJ+I.B">
+                <field name="TEXT">316WIFI</field>
+              </block>
+            </value>
+            <value name="PINCODE">
+              <block type="text" id="Cp|C4!~x,.eCNrHfnnP}">
+                <field name="TEXT">@martin688</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="?fg8?6z[N`uWPmQ3YZR)">
+                <value name="IF0">
+                  <block type="esp8266_connected" id=":wS8pR;T::8+=Oh7VF8@"></block>
+                </value>
+                <statement name="DO0">
+                  <block type="serial_print" id="X)GerMX;~CZI936]3Elv">
+                    <field name="SERIAL_ID">Serial</field>
+                    <field name="NEW_LINE">TRUE</field>
+                    <value name="CONTENT">
+                      <block type="text" id="ctUZlMAKWo4^!VvZGRFP">
+                        <field name="TEXT">WIFI OK</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_whileUntil" id="SIOQyxx=[.,TY3hOOrsu">
+                    <field name="MODE">WHILE</field>
+                    <value name="BOOL">
+                      <block type="logic_negate" id="rqLAhGA@n5BztQNXgV,q">
+                        <value name="BOOL">
+                          <block type="esp8266_connected" id="RfgTR(ut`|@4-Uvd-DTu"></block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="time_delay" id="{!Z9.x3LE~Q6e4t9|Dz!">
+                        <value name="DELAY_TIME_MILI">
+                          <block type="math_number" id="fx4m-IDLy6BaKzn{%*6?">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_loop" id="EAg)g_/#Sgta~QPPg4@7" deletable="false" x="-8" y="266">
+    <statement name="LOOP_FUNC">
+      <block type="controls_if" id="vUY_!.]KQYib.(ceJK/.">
+        <value name="IF0">
+          <block type="logic_compare" id="3}JI1@ZegQL^pw=?}?SH">
+            <field name="OP">LTE</field>
+            <value name="A">
+              <block type="io_analogread_var" id="BPrEd.amm0S`4}D7%%J9">
+                <value name="PIN">
+                  <block type="io_analogpins" id="^I0)%D!~U~qN3/usy*0s">
+                    <field name="PIN">A0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="yC,SVL#!XTGj(e#rxHYh">
+                <field name="NUM">820</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="U[L]`WZDC5lXY431?yH@">
+            <value name="IF0">
+              <block type="logic_operation" id="K0qJ;GHq,^zz9K~S!9~k">
+                <field name="OP">AND</field>
+                <value name="A">
+                  <block type="logic_compare" id="RNOQ4GR-42nU19]AFykG">
+                    <field name="OP">LTE</field>
+                    <value name="A">
+                      <block type="io_analogread_var" id="nh!D9=HeuT(8_[dUMww9">
+                        <value name="PIN">
+                          <block type="io_analogpins" id="GHq=sb}%.ct-2(7POTyD">
+                            <field name="PIN">A0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="(NI2ZnOU/h#md?3Y?zCm">
+                        <field name="NUM">820</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id="PVS]%ULiwQns#Ay)e/H@">
+                    <field name="OP">GTE</field>
+                    <value name="A">
+                      <block type="io_analogread_var" id="]]C`z6w*;hg%~X,;9~@U">
+                        <value name="PIN">
+                          <block type="io_analogpins" id="N6^@gDL}Q5f`S6=IU%~[">
+                            <field name="PIN">A0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id=":%AS2I,,Ss[K67:%`/{,">
+                        <field name="NUM">780</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="VA7JJ]f_C_L:,W.PO3Qr">
+                <field name="VAR">水位</field>
+                <value name="VALUE">
+                  <block type="math_number" id=":p+M4h.-G/%2vp;)2Ncw">
+                    <field name="NUM">240</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="W@xLoSa%5jxF61pvA31g">
+                    <field name="VAR">IFTTT請求路徑</field>
+                    <value name="VALUE">
+                      <block type="text_join" id="tYzSKA#7upB`#9IGm6wL">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="4.3[#s.nUzS3h.TJrNw9">
+                            <field name="TEXT">http://maker.ifttt.com/trigger/water/with/key/d63Xuh23TSv-Kax2HLP9AJFDtae0a7_LSZZRnSY1VDS?</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="text" id="`P%*;cTy!V/F^f`pG491">
+                            <field name="TEXT">value2=</field>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="esp8266_urlencode" id="/oL%NoOU7hpD(konxI5w">
+                            <value name="CONTENT">
+                              <block type="variables_get" id="i(V8Du)^P[)O!eApw0l(">
+                                <field name="VAR">水位</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="mZFSBg/4|a)MZ_E_?pT+">
+                        <value name="IF0">
+                          <block type="logic_compare" id="o4verZ.FT]z5E15|TdAi">
+                            <field name="OP">GT</field>
+                            <value name="A">
+                              <block type="esp8266_http_get" id="?TBlzU,OxkrJOm8Rx!hc">
+                                <value name="URL">
+                                  <block type="variables_get" id="@h82U+|;MZKZX*%NUaAp">
+                                    <field name="VAR">IFTTT請求路徑</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="LidPx]RBT[Yr4s+21eJx">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="time_delay" id="4~kkX!YfwC4193NuCK-7">
+                            <value name="DELAY_TIME_MILI">
+                              <block type="math_number" id="}(^ep3Pf5RTr`3?UnGL%">
+                                <field name="NUM">10000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="BO:4[4yMHP_i7Vl%ban2">
+                <value name="IF0">
+                  <block type="logic_operation" id="2{PdluHm,=K.G6T2Px/U">
+                    <field name="OP">AND</field>
+                    <value name="A">
+                      <block type="logic_compare" id="h9#{AMxFR[mak]Y0.s:J">
+                        <field name="OP">LTE</field>
+                        <value name="A">
+                          <block type="io_analogread_var" id="UF7ZSP1bepn58L+oF!nF">
+                            <value name="PIN">
+                              <block type="io_analogpins" id="?SHZEQnURJJqO/Qd*oA_">
+                                <field name="PIN">A0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="a7yNCG9RI=rr^aM9A~-i">
+                            <field name="NUM">750</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_compare" id="lW.f*4k@:Y]m:CR5+10?">
+                        <field name="OP">GTE</field>
+                        <value name="A">
+                          <block type="io_analogread_var" id="ok{yF^yy@nz[.P![yU0b">
+                            <value name="PIN">
+                              <block type="io_analogpins" id="ynD12HI5+qA7_YiZ`Tg[">
+                                <field name="PIN">A0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="C7FwKn18{*KBY^]mlwg-">
+                            <field name="NUM">710</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="variables_set" id="724nB%aIMWD!Ha8U[]rI">
+                    <field name="VAR">水位</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="A-tGJ0Ui1f!EQZnYn-+7">
+                        <field name="NUM">220</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="g=mPdSbaFTbNg[`k:,Dg">
+                        <field name="VAR">IFTTT請求路徑</field>
+                        <value name="VALUE">
+                          <block type="text_join" id="dtO{s=Mzt=zdIB7vt/cI">
+                            <mutation items="3"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="d],u]L6Qq]f^dXS(@|Or">
+                                <field name="TEXT">http://maker.ifttt.com/trigger/water/with/key/d63Xuh23TSv-Kax2HLP9AJFDtae0a7_LSZZRnSY1VDS?</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="text" id="Ux`9:W}OqZWFO9AKS=2#">
+                                <field name="TEXT">value2=</field>
+                              </block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="esp8266_urlencode" id="e!;5RZ{oj=R3f!r#jop6">
+                                <value name="CONTENT">
+                                  <block type="variables_get" id="U3.E2?:4_^AG!R3N@@V.">
+                                    <field name="VAR">水位</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="*3+d]ptox~d.WBCAr?NW">
+                            <value name="IF0">
+                              <block type="logic_compare" id="wxW?7T#b#S]w9QB6GZ^i">
+                                <field name="OP">GT</field>
+                                <value name="A">
+                                  <block type="esp8266_http_get" id="`9O5]W77(r_Kz*mW48sp">
+                                    <value name="URL">
+                                      <block type="variables_get" id="YuQvM1,N4#??xgX0NynR">
+                                        <field name="VAR">IFTTT請求路徑</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="=^zz/RG0g=zKS6Y6,|nN">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="time_delay" id=",WrB}5dO]swHppRqZ5Of">
+                                <value name="DELAY_TIME_MILI">
+                                  <block type="math_number" id="wMbFHj05{q7~w:6r/Px#">
+                                    <field name="NUM">10000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="=sUB}D@@az~A1fwQbchf">
+                    <value name="IF0">
+                      <block type="logic_operation" id="Z2VJRb.#D^n@HtFYFFU4">
+                        <field name="OP">AND</field>
+                        <value name="A">
+                          <block type="logic_compare" id="fdw:m*G3nvMm@X#Q*u6X">
+                            <field name="OP">LTE</field>
+                            <value name="A">
+                              <block type="io_analogread_var" id="B,dQ.ad`|JP*IgW@zR%]">
+                                <value name="PIN">
+                                  <block type="io_analogpins" id="jhg_`*RGvC)pLl~wjh4^">
+                                    <field name="PIN">A0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="IR_gl5+!=|sw/mv2,3Y)">
+                                <field name="NUM">700</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id=".0+TI)a*:Hr^=fH{=I^_">
+                            <field name="OP">GTE</field>
+                            <value name="A">
+                              <block type="io_analogread_var" id="SCGGIPwe~08~LtAt9GF~">
+                                <value name="PIN">
+                                  <block type="io_analogpins" id="%;,2I:s2?(9:awL@ZYfe">
+                                    <field name="PIN">A0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="%)?CVi=~`1%w6k:pq#s1">
+                                <field name="NUM">650</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="gnS:id9F,wnKSP)4(m#N">
+                        <field name="VAR">水位</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="ruznE#1zFqx+=|{*EB71">
+                            <field name="NUM">200</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="k^HC_v.XQs+?ljL]JXaw">
+                            <field name="VAR">IFTTT請求路徑</field>
+                            <value name="VALUE">
+                              <block type="text_join" id="A#_[l6CQUpv)r=p6#g:^">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="(DwJwCFqa?CD7ztD]g[?">
+                                    <field name="TEXT">http://maker.ifttt.com/trigger/water/with/key/d63Xuh23TSv-Kax2HLP9AJFDtae0a7_LSZZRnSY1VDS?</field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="text" id="OEmhm%t.9tTSY*U`[9e;">
+                                    <field name="TEXT">value2=</field>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="esp8266_urlencode" id="37+pE`H~A%HJ/D6=IQs3">
+                                    <value name="CONTENT">
+                                      <block type="variables_get" id="q-B)hltvER04ou?mzIXw">
+                                        <field name="VAR">水位</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_if" id="apC[hl1aUFZQcKB;lM^I">
+                                <value name="IF0">
+                                  <block type="logic_compare" id=",0@{/JKrd/!8`l@|;-[q">
+                                    <field name="OP">GT</field>
+                                    <value name="A">
+                                      <block type="esp8266_http_get" id="(qhia]EobCdZ5:=Bal_^">
+                                        <value name="URL">
+                                          <block type="variables_get" id="WDaFkN)6(:`GVdVP2Hio">
+                                            <field name="VAR">IFTTT請求路徑</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="0{D}0YR?O:.SbACx9*p@">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="time_delay" id="vJLvDmltUFLt:ly9,rSR">
+                                    <value name="DELAY_TIME_MILI">
+                                      <block type="math_number" id="nD@8+OKCV_o=m_Qzs2te">
+                                        <field name="NUM">30000</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

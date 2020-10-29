@@ -20,12 +20,13 @@
 * [執行結果](#執行結果)
 * [專案心得](#專案心得)
 
-目的
-If you want to use the **LinkIt 7697** with the Arduino IDE, follow [this](https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/environment-setup) tutorial. As a summary:
+## 目的
+
+結合上課所學的四個感測器來完成期中專案，四個感測器分別是溫溼度感應器`
 1. Go to *File -> Preferences* and in the **Additional Boards Manager URLs**, type
 ```
 http://download.labs.mediatek.com/package_mtk_linkit_7697_index.json
-```	
+```
 
 
 動機
